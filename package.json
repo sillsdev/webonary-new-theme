@@ -1,0 +1,28 @@
+{
+  "name": "sil-software-sites",
+  "version": "1.0.0",
+  "description": "software.sil.org product sites",
+  "main": "htdocs/index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sillsdev/web-productsites.git"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/sillsdev/web-productsites/issues"
+  },
+  "devDependencies": {
+    "gulp-util": "~3.0.0",
+    "gulp": "~3.8.0",
+    "gulp-exec": "~2.1.0",
+    "gulp-livereload": "~3.8.0",
+    "tiny-lr": "~0.1.6",
+    "lodash.template": "~3.6.0",
+    "gulp-less": "~3.0.0",
+    "gulp-sequence": "~0.4.0"
+  }
+}

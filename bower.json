@@ -1,0 +1,24 @@
+{
+  "name": "SIL LTD Product Sites Theme",
+  "description": "SIL Language Technology Development Product Sites Wordpress theme",
+  "main": "index.php",
+  "authors": [
+    "Cambell Prince and Victor Gaultney"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor",
+    "vendor_bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.x",
+    "angular-route": "~1.2.x",
+    "angular-resource": "~1.2.x",
+    "angular-ui-bootstrap-bower": "~0.x"
+  }
+}
