@@ -6197,9 +6197,6 @@ body.admin-bar .navbar-fixed-top {
   margin-bottom: 0px;
   margin-top: 0px;
 }
-.navbar-default form#searchform {
-  max-width: 320px;
-}
 .navbar-default #nav-list {
   clear: right;
 }
@@ -6218,6 +6215,12 @@ body.admin-bar .navbar-fixed-top {
     height: 48px;
     width: auto;
   }
+  .navbar-default .navbar-form {
+    max-width: 100%;
+    border-top: 0px;
+    border-bottom: 0px;
+    padding: 0px 15px;
+  }
 }
 @media (min-width: 760px) {
   .navbar-default li {
@@ -6226,6 +6229,9 @@ body.admin-bar .navbar-fixed-top {
   }
   .navbar-default li:last-child {
     border: 0;
+  }
+  .navbar-default form#searchform {
+    max-width: 320px;
   }
 }
 @media (min-width: 760px) and (max-width: 992px) {

@@ -53,8 +53,6 @@ body.admin-bar {
 	}
 }
 
-
-
 .navbar-default {
 	background: white;
 	opacity: 0.95;
@@ -64,10 +62,6 @@ body.admin-bar {
 	a.logo {
 		margin-bottom: 0px;
 		margin-top: 0px;
-	}
-
-	form#searchform {
-		max-width: 320px;
 	}
 
 	#nav-list {
@@ -93,6 +87,12 @@ body.admin-bar {
 			height: 48px;
 			width: auto;
 		}
+		.navbar-form {
+			max-width: 100%;
+			border-top: 0px;
+			border-bottom: 0px;
+			padding: 0px 15px;
+		}
 	}
 
   @media (min-width: @screen-tablet) {
@@ -102,6 +102,9 @@ body.admin-bar {
 			&:last-child {
 				border: 0;
 			}
+		}
+		form#searchform {
+			max-width: 320px;
 		}
 	}
 }
