@@ -88,24 +88,26 @@
 {% block content %}
 {% endblock %}
 
-{% include 'footer.twig' %}
-
-{{ function('wp_footer') }}
-
-<footer class="footer-bottom">
-	<div class="container">
-		<div class="row">
-			<nav class="col-xs-12 col-sm-6">
-				<p>Copyright © {{ "now"|date("Y") }}&nbsp;&nbsp;<a href="http://www.sil.org/" title="" class="active">SIL International {{qux}}</a></p>
-			</nav>
-			<nav class="col-xs-12 col-sm-6">
-				<ul class="nav nav-horizontal">
-					<li class="first leaf active"><a href="/terms-of-use" title="" class="active">Terms of Use</a></li>
-					<li class="last leaf active"><a href="/privacy-policy" title="" class="active">Privacy Policy</a></li>
-				</ul>
-			</nav>
+<footer class="footer">
+	<footer class="footer-top">
+	{% include 'footer.twig' %}
+	{{ function('wp_footer') }}
+	</footer>
+	<footer class="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<nav class="col-xs-12 col-sm-6">
+					<p>Copyright © {{ "now"|date("Y") }}&nbsp;&nbsp;<a href="http://www.sil.org/" title="" class="active">SIL International {{qux}}</a></p>
+				</nav>
+				<nav class="col-xs-12 col-sm-6">
+					<ul class="nav nav-horizontal">
+						<li class="first leaf active"><a href="/terms-of-use" title="" class="active">Terms of Use</a></li>
+						<li class="last leaf active"><a href="/privacy-policy" title="" class="active">Privacy Policy</a></li>
+					</ul>
+				</nav>
+			</div>
 		</div>
-	</div>
+	</footer>
 </footer>
 {% if site.id == 1 and post.title == "Products" %}
 	<!--

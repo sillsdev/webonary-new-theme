@@ -6176,6 +6176,21 @@ a {
   -ms-hyphens: auto;
   hyphens: auto;
 }
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 198px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 198px;
+}
 body {
   padding-top: 87px !important;
 }
