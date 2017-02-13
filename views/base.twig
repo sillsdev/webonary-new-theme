@@ -40,9 +40,9 @@
 {% endblock %}
 </head>
 <body class="{{body_class}}" data-ng-app="spDefault" data-source="base.twig">
-<!-- <body class="html front not-logged-in no-sidebars page-node page-node- page-node-1 node-type-page i18n-en navbar-is-static-top bootstrap-anchors-processed">
- -->
- <!-- HEADER -->
+{# <body class="html front not-logged-in no-sidebars page-node page-node- page-node-1 node-type-page i18n-en navbar-is-static-top bootstrap-anchors-processed">
+#}
+<!-- HEADER -->
 <header id="navbar" role="banner">
   <nav role="navigation" class="navbar navbar-default navbar-fixed-top" data-ng-controller="NavCtrl">
     <div class="container-fluid">
@@ -56,19 +56,29 @@
 
       <div class="navbar-header">
       	<a class="navbar-btn" href="{{home_url}}" title="Home">
-          <img src="{{theme_url}}/images/sil_logo_tm_combo.jpg" alt="Home">
+          <img src="{{theme_url}}/images/webonary-logo.png" alt="Home">
         </a>
       </div>
 
-			<div class="collapse navbar-collapse" data-collapse="collapsed">
+			<div class="collapse navbar-collapse" data-uib-collapse="collapsed">
 				<div id="search-box" class="navbar-form navbar-right">
 					{{function('get_search_form')}}
 				</div>
 				<div id="nav-list">
 				<ul class="nav navbar-nav navbar-right">
 					{% for item in menu.get_items %}
-<!--							<li class="nav-main-item {{item.classes | join(' ')}}"><a class="nav-main-link" href="{{item.get_link}}">{{item.title}}</a></li> -->
-						<li class="mc-{{item.title}}"><a href="{{item.get_link}}">{{item.title}}</a></li>
+{#							<li class="nav-main-item {{item.classes | join(' ')}}"><a class="nav-main-link" href="{{item.get_link}}">{{item.title}}</a></li> #}
+						{% if item.get_children %}
+							<li uib-dropdown class="mc-{{item.title}}"><a uib-dropdown-toggle href="#">{{item.title}} <b class="caret"></b></a>
+							<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
+								{% for child in item.get_children %}
+									<li role="menuitem"><a href="{{child.get_link}}">{{child.title}}</a></li>
+								{% endfor %}
+							</ul>
+						{% else %}
+							<li class="mc-{{item.title}}"><a href="{{item.get_link}}">{{item.title}}</a>
+						{% endif %}
+							</li>
 					{% endfor %}
 				</ul>
 				</div>
@@ -82,9 +92,12 @@
     <h1 class="navbar-text page-header">{{site.name}}</h1>
   </div>
 </header>
+{# Breadcrumbs currently not used in theme CP 2017-02
 {% block breadcrumbs %}
   {% include "breadcrumbs.twig" %}
 {% endblock %}
+#}
+
 {% block content %}
 {% endblock %}
 
@@ -109,32 +122,5 @@
 		</div>
 	</footer>
 </footer>
-{% if site.id == 1 and post.title == "Products" %}
-	<!--
-		ONLY RENDER THIS NEXT SCRIPT FOR http://software.sil.org/products/, NOWHERE ELSE!!!!
-		Script is here so that $() = jQuery() and because all other content is now rendered.
-		Adds target="_blank" attribute to all Markdown-generated links on all Product lists.
-	//-->
-	<script type="text/javascript">
-		(function($){
-			$(document).ready(function(){
-				$('.products + ul a, a.nrsi').attr('target','_blank');
-			});
-		})(jQuery);
-	</script>
-{% elseif site.id == 1 and (post.title == "Contact NRSI" or post.title == "Contact Language Technology") %}
-	<!--
-		ONLY RENDER THIS NEXT SCRIPT FOR PRODUCTS CONTACT FORM PAGES, NOWHERE ELSE!!!
-		Appends "Return to Products Page" link to "message successfully sent" output.
-	//-->
-	<script type="text/javascript">
-		(function($){
-			$(document).ready(function(){
-				var back2prodspg = ' <a href="/products/">Return to Products Page &raquo;</a>';
-				$('.wpcf7-response-output.wpcf7-mail-sent-ok').append(back2prodspg);
-			});
-		})(jQuery);
-	</script>
-{% endif %}
 </body>
 </html>

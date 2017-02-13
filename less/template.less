@@ -5,19 +5,19 @@ h1 {
   margin-top:  25px;
 }
 
-h1, h2, h3 {
-  color: @color-bg;
-}
+// h1, h2, h3 {
+//   color: @color-bg;
+// }
 
 h4, h5, h6 {
-  color: @color-bg;
+  // color: @color-bg;
   font-style:  italic;
 }
 
 .textwidget {
 	h3 {
 		.h4;
-		color: @color-bg;
+		// color: @color-bg;
 		font-style:  italic;
 	}
 }
@@ -56,6 +56,12 @@ body {
 }
 
 // Navbar
+// Navbar fixes for wordpress menus when user is logged in.
+// This over-rides the default wordpress style which make adminbar absoluate at width < 600px
+#wpadminbar {
+	position: fixed !important;
+}
+
 body {
 	padding-top: 87px !important;
 	@media (max-width: @screen-tablet) {
@@ -64,12 +70,17 @@ body {
 }
 
 body.admin-bar {
-
 	.navbar-fixed-top {
 		top: 28px !important;
 	}
+	@media (max-width: @screen-tablet) {
+		.navbar-fixed-top {
+			top: 46px !important;
+		}
+	}
 }
 
+// Navbar style
 .navbar-default {
 	background: white;
 	opacity: 0.95;
@@ -113,13 +124,13 @@ body.admin-bar {
 	}
 
   @media (min-width: @screen-tablet) {
-		li {
-			border-right: 1px solid @text-color;
-			display: inline-block;
-			&:last-child {
-				border: 0;
-			}
-		}
+		// li {
+		// 	border-right: 1px solid @text-color;
+		// 	display: inline-block;
+		// 	&:last-child {
+		// 		border: 0;
+		// 	}
+		// }
 		form#searchform {
 			max-width: 320px;
 		}

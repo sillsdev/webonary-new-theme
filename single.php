@@ -35,7 +35,7 @@ $context['footer_fonts'] = Timber::get_widgets('footer_fonts');
 $context['footer_contact'] = Timber::get_widgets('footer_contact');
 $context['sidebar_main'] = Timber::get_widgets('sidebar_main');
 
-$context['wp_title'] .= ' - ' . $post->title();
+// $context['wp_title'] .= ' - ' . $post->title();
 // $context['comment_form'] = TimberHelper::get_comment_form();
 
 $templates = array('single-' . $post->ID . '.twig', 'single-' . $post->post_type . '.twig', 'single.twig');
