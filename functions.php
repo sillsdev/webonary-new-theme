@@ -77,14 +77,15 @@ function highlight($text, $words){
 	}
 }
 
+define('VERSION', '0.0.1'); // TODO Move this to version.php CP 2017-02
 function ttp_load_scripts(){
 
-	wp_enqueue_script('angular',          THEME_URL . "/vendor_bower/angular/angular.js");
-	wp_enqueue_script('angular-route',    THEME_URL . "/vendor_bower/angular-route/angular-route.js");
-	wp_enqueue_script('angular-resource', THEME_URL . "/vendor_bower/angular-resource/angular-resource.js");
-	wp_enqueue_script('angular-ui',       THEME_URL . "/vendor_bower/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js");
+	wp_enqueue_script('angular',          THEME_URL . "/vendor_bower/angular/angular.js", array(), VERSION, true);
+	wp_enqueue_script('angular-route',    THEME_URL . "/vendor_bower/angular-route/angular-route.js", array(), VERSION, true);
+	wp_enqueue_script('angular-resource', THEME_URL . "/vendor_bower/angular-resource/angular-resource.js", array(), VERSION, true);
+	wp_enqueue_script('angular-ui',       THEME_URL . "/vendor_bower/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js", array(), VERSION, true);
 
-	wp_enqueue_script('default', THEME_URL . "/client/default/ng-app.js");
+	wp_enqueue_script('ng-app', THEME_URL . "/client/default/ng-app.js", array(), VERSION, true);
 
 }
 

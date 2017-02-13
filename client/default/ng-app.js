@@ -3,7 +3,6 @@
 angular.module('spDefault', [
 	   'ui.bootstrap'
     ])
-	.controller('NavCtrl', ['$scope',
-	                         function($scope) {
+	.controller('NavCtrl', ['$scope', function($scope) {
 	}])
 	;
